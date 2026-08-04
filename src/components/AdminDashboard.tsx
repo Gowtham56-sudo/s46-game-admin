@@ -41,7 +41,7 @@ export default function AdminDashboard({ gameState, questions, onSendAction }: P
   };
 
   const handleReplayAudio = () => {
-    if (gameState.currentRound === 1 && currentQ && 'synthPreset' in currentQ) {
+    if (gameState.currentRound === 2 && currentQ && 'synthPreset' in currentQ) {
       const q = currentQ as { synthPreset?: string; audioUrl?: string };
       playSynthPreset(q.synthPreset || 'windows', q.audioUrl);
       onSendAction('REPLAY_AUDIO');
@@ -177,7 +177,7 @@ export default function AdminDashboard({ gameState, questions, onSendAction }: P
           </button>
 
 
-          {gameState.currentRound === 1 && (
+          {gameState.currentRound === 2 && (
             <button
               onClick={handleReplayAudio}
               className="flex items-center justify-center gap-2 p-4 rounded-xl bg-blue-950/60 hover:bg-blue-900/60 text-blue-300 border border-blue-800/80 font-bold transition-all text-sm cursor-pointer"
