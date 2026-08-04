@@ -396,25 +396,7 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
 
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
-                      Audio Synthesizer Preset
-                    </label>
-                    <select
-                      value={r2Synth}
-                      onChange={(e) => setR2Synth(e.target.value as typeof r2Synth)}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white"
-                    >
-                      <option value="windows">Windows Startup Sound</option>
-                      <option value="dialup">Dial-Up Modem Tone</option>
-                      <option value="ringtone">Nokia 3310 Ringtone</option>
-                      <option value="8bit">8-Bit Arcade Pacman Sweep</option>
-                      <option value="sci_fi">Sci-Fi Beam Synth</option>
-                      <option value="piano">Grand Piano C-Major Chord</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
-                      Or Custom MP3/WAV Audio URL (Optional)
+                      MP3/WAV Audio URL
                     </label>
                     <ImageUploadInput
                       value={r2AudioUrl}
