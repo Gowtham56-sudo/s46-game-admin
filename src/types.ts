@@ -50,6 +50,11 @@ export interface EventSettings {
   gameTitle: string;
   logoUrl?: string;
   themeColor: 'blue' | 'purple' | 'emerald' | 'amber';
+  timerDurations: {
+    round1: number;
+    round2: number;
+    round3: number;
+  };
 }
 
 export interface GameState {
@@ -62,6 +67,9 @@ export interface GameState {
   settings: EventSettings;
   lastUpdated: number;
   audioPlaying: boolean;
+  isTimerRunning: boolean;
+  timeLeft: number;
+  totalTime: number;
 }
 
 export interface AdminAuth {

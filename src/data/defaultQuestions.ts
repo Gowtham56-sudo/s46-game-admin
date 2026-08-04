@@ -6,6 +6,11 @@ export const DEFAULT_SETTINGS: EventSettings = {
   gameTitle: 'S46 FUN GAMES',
   logoUrl: '/logos/logo.png',
   themeColor: 'blue',
+  timerDurations: {
+    round1: 30,
+    round2: 45,
+    round3: 60,
+  }
 };
 
 export const DEFAULT_QUESTIONS: QuestionsData = {

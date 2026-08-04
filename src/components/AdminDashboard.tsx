@@ -9,8 +9,6 @@ import {
   Trophy,
   Volume2,
   ExternalLink,
-  Plus,
-  Pause,
   Flag,
   Radio,
   Sparkles,
@@ -233,17 +231,17 @@ export default function AdminDashboard({ gameState, questions, onSendAction }: P
 
             {'options' in currentQ && (
               <div className="grid grid-cols-2 gap-3">
-                {(currentQ as { options: string[]; correctAnswerIndex: number }).options.map((opt, i) => (
+                {(currentQ as unknown as QuizQuestion).options.map((opt, i) => (
                   <div
                     key={i}
                     className={`p-3 rounded-xl border text-sm font-semibold flex items-center justify-between ${
-                      i === (currentQ as { correctAnswerIndex: number }).correctAnswerIndex
+                      i === (currentQ as unknown as QuizQuestion).correctAnswerIndex
                         ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300'
                         : 'bg-slate-950 border-slate-800 text-slate-400'
                     }`}
                   >
                     <span>{String.fromCharCode(65 + i)}. {opt}</span>
-                    {i === (currentQ as { correctAnswerIndex: number }).correctAnswerIndex && (
+                    {i === (currentQ as unknown as QuizQuestion).correctAnswerIndex && (
                       <span className="text-xs bg-emerald-500 text-slate-950 font-black px-2 py-0.5 rounded-full">
                         CORRECT
                       </span>

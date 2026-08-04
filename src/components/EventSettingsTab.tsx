@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import type { EventSettings } from '../types';
-import { Settings, Save, CheckCircle2, Plus, Upload } from 'lucide-react';
+import { Settings, Save, CheckCircle2, Upload } from 'lucide-react';
 
 function ImageUploadInput({ value, onChange, placeholder }: { value: string, onChange: (val: string) => void, placeholder: string }) {
   const [uploading, setUploading] = useState(false);
@@ -72,6 +72,7 @@ export default function EventSettingsTab({ settings, onUpdateSettings }: Props) 
       gameTitle,
       logoUrl,
       themeColor: settings.themeColor || 'blue',
+      timerDurations: settings.timerDurations,
     };
     onUpdateSettings(updated);
     setSavedSuccess(true);

@@ -6,7 +6,7 @@ import EventSettingsTab from './EventSettingsTab';
 import ParticipantsPanel from './ParticipantsPanel';
 import type { GameState, QuestionsData, EventSettings } from '../types';
 import { DEFAULT_QUESTIONS, DEFAULT_SETTINGS } from '../data/defaultQuestions';
-import { LayoutDashboard, FileQuestion, Settings, LogOut, Tv, Radio, Users } from 'lucide-react';
+import { LayoutDashboard, FileQuestion, Settings, LogOut, Tv, Users } from 'lucide-react';
 
 export default function AdminPanel() {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('nextgen_admin_token'));
