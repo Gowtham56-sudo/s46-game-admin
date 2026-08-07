@@ -460,6 +460,19 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
                     />
                   </div>
 
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
+                      Hint (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={rConnHint}
+                      onChange={(e) => setRConnHint(e.target.value)}
+                      placeholder="e.g. Helpful hint text"
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white"
+                    />
+                  </div>
+
                   <div className="space-y-2">
                     <label className="block text-xs font-bold uppercase text-slate-400">4 Image URLs</label>
                     <ImageUploadInput

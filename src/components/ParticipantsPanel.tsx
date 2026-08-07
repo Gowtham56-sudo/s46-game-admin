@@ -24,6 +24,7 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
   const [adjustingId, setAdjustingId] = useState<string | null>(null);
 
   const fetchParticipants = async () => {
+    setLoading(true);
     try {
       const res = await fetch('/api/participants');
       const data = await res.json();
@@ -59,6 +60,16 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
     }
   };
 
+  const handleRemoveAll = async () => {
+    if (!window.confirm("Are you sure you want to remove ALL participants? This action cannot be undone.")) return;
+    try {
+      await fetch('/api/participants/remove-all', { method: 'POST' });
+      await fetchParticipants();
+    } catch (err) {
+      console.error('Failed to remove participants:', err);
+    }
+  };
+
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-xl">
       {/* Header */}
@@ -86,6 +97,13 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
             title="Refresh Participants"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+          </button>
+          <button
+            onClick={handleRemoveAll}
+            className="px-4 py-2 bg-rose-950 hover:bg-rose-900 text-rose-300 rounded-xl transition-all border border-rose-800 cursor-pointer text-sm font-bold flex items-center gap-2"
+            title="Remove All Participants"
+          >
+            Remove All
           </button>
         </div>
       </div>
