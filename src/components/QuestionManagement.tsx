@@ -194,7 +194,7 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
       }
     }
 
-    await fetch('/api/questions', {
+    await fetch(`${API_BASE}/api/questions`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ round: activeTab, questions: currentList }),
