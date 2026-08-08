@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import type { EventSettings } from '../types';
 import { Settings, Save, CheckCircle2, Upload } from 'lucide-react';
+import { API_BASE } from '../config';
 
 function ImageUploadInput({ value, onChange, placeholder }: { value: string, onChange: (val: string) => void, placeholder: string }) {
   const [uploading, setUploading] = useState(false);
@@ -15,7 +16,7 @@ function ImageUploadInput({ value, onChange, placeholder }: { value: string, onC
     reader.onload = async (event) => {
       const dataUrl = event.target?.result as string;
       try {
-        const res = await fetch('/api/upload', {
+        const res = await fetch(`${API_BASE}/api/upload`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ filename: file.name, data: dataUrl })

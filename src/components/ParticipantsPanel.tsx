@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Users, Award, Plus, Minus, Trophy, RefreshCw, CheckCircle2, Clock } from 'lucide-react';
+import { API_BASE } from '../config';
 
 interface ParticipantData {
   id: string;
@@ -26,7 +27,7 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
   const fetchParticipants = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/participants');
+      const res = await fetch(`${API_BASE}/api/participants`);
       const data = await res.json();
       if (data.participants) {
         setParticipants(data.participants);
@@ -47,7 +48,7 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
   const handleAdjustPoints = async (fullName: string, delta: number) => {
     setAdjustingId(fullName);
     try {
-      await fetch('/api/participants/adjust-points', {
+      await fetch(`${API_BASE}/api/participants/adjust-points`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fullName, delta }),
@@ -63,7 +64,7 @@ export default function ParticipantsPanel({ onAnnounceWinner, currentRound }: Pr
   const handleRemoveAll = async () => {
     if (!window.confirm("Are you sure you want to remove ALL participants? This action cannot be undone.")) return;
     try {
-      await fetch('/api/participants/remove-all', { method: 'POST' });
+      await fetch(`${API_BASE}/api/participants/remove-all`, { method: 'POST' });
       await fetchParticipants();
     } catch (err) {
       console.error('Failed to remove participants:', err);

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { QuestionsData, AudioQuestion, ConnectionsQuestion } from '../types';
 import { Volume2, Grid, Plus, Trash2, Edit2, RotateCcw, Save, X, Upload } from 'lucide-react';
+import { API_BASE } from '../config';
 
 function ImageUploadInput({ value, onChange, placeholder }: { value: string, onChange: (val: string) => void, placeholder: string }) {
   const [uploading, setUploading] = useState(false);
@@ -14,7 +15,7 @@ function ImageUploadInput({ value, onChange, placeholder }: { value: string, onC
     reader.onload = async (event) => {
       const dataUrl = event.target?.result as string;
       try {
-        const res = await fetch('/api/upload', {
+        const res = await fetch(`${API_BASE}/api/upload`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ filename: file.name, data: dataUrl })
@@ -81,7 +82,7 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
   const handleResetQuestions = async () => {
     if (!confirm('Are you sure you want to reset all questions to the default 30 questions?')) return;
     try {
-      await fetch('/api/questions/reset', { method: 'POST' });
+      await fetch(`${API_BASE}/api/questions/reset`, { method: 'POST' });
       onRefreshQuestions();
     } catch (e) {
       alert('Error resetting questions.');
@@ -145,7 +146,7 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
       (q as { questionNumber: number }).questionNumber = i + 1;
     });
 
-    await fetch('/api/questions', {
+    await fetch(`${API_BASE}/api/questions`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ round: activeTab, questions: currentList }),

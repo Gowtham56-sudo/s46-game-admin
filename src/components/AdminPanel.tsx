@@ -7,6 +7,7 @@ import ParticipantsPanel from './ParticipantsPanel';
 import type { GameState, QuestionsData, EventSettings } from '../types';
 import { DEFAULT_QUESTIONS, DEFAULT_SETTINGS } from '../data/defaultQuestions';
 import { LayoutDashboard, FileQuestion, Settings, LogOut, Tv, Users } from 'lucide-react';
+import { API_BASE } from '../config';
 
 export default function AdminPanel() {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('nextgen_admin_token'));
@@ -32,7 +33,7 @@ export default function AdminPanel() {
 
   const fetchState = useCallback(async () => {
     try {
-      const res = await fetch('/api/state');
+      const res = await fetch(`${API_BASE}/api/state`);
       const data = await res.json();
       if (data.gameState) setGameState(data.gameState);
       if (data.questions) setQuestions(data.questions);
@@ -47,7 +48,7 @@ export default function AdminPanel() {
     fetchState();
 
     // Subscribe to SSE for instant synchronization with live Audience Screen
-    const eventSource = new EventSource('/api/state/stream');
+    const eventSource = new EventSource(`${API_BASE}/api/state/stream`);
     eventSource.onmessage = (event) => {
       try {
         const updatedState = JSON.parse(event.data) as GameState;
@@ -75,7 +76,7 @@ export default function AdminPanel() {
 
   const handleSendAction = async (action: string, payload?: Record<string, unknown>) => {
     try {
-      const res = await fetch('/api/state/action', {
+      const res = await fetch(`${API_BASE}/api/state/action`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, payload }),
@@ -89,7 +90,7 @@ export default function AdminPanel() {
 
   const handleUpdateSettings = async (newSettings: EventSettings) => {
     try {
-      const res = await fetch('/api/settings', {
+      const res = await fetch(`${API_BASE}/api/settings`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newSettings),

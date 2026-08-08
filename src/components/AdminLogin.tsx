@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { Lock, Mail, Shield, Sparkles, ArrowRight } from 'lucide-react';
+import { API_BASE } from '../config';
 
 interface Props {
   onLoginSuccess: (token: string) => void;
@@ -18,7 +19,7 @@ export default function AdminLogin({ onLoginSuccess }: Props) {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
