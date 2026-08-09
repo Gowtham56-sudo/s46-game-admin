@@ -20,10 +20,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 1,
         "title": "Guess the Place 1",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 1",
         "hint": "Hint for place 1"
@@ -33,10 +33,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 2,
         "title": "Guess the Place 2",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 2",
         "hint": "Hint for place 2"
@@ -46,10 +46,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 3,
         "title": "Guess the Place 3",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 3",
         "hint": "Hint for place 3"
@@ -59,10 +59,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 4,
         "title": "Guess the Place 4",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 4",
         "hint": "Hint for place 4"
@@ -72,10 +72,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 5,
         "title": "Guess the Place 5",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 5",
         "hint": "Hint for place 5"
@@ -85,10 +85,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 6,
         "title": "Guess the Place 6",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 6",
         "hint": "Hint for place 6"
@@ -98,10 +98,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 7,
         "title": "Guess the Place 7",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 7",
         "hint": "Hint for place 7"
@@ -111,10 +111,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 8,
         "title": "Guess the Place 8",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 8",
         "hint": "Hint for place 8"
@@ -124,10 +124,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 9,
         "title": "Guess the Place 9",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 9",
         "hint": "Hint for place 9"
@@ -137,10 +137,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 10,
         "title": "Guess the Place 10",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Place 10",
         "hint": "Hint for place 10"
@@ -254,10 +254,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 1,
         "title": "Guess the Song 1",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 1",
         "hint": "Hint for song 1"
@@ -267,10 +267,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 2,
         "title": "Guess the Song 2",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 2",
         "hint": "Hint for song 2"
@@ -280,10 +280,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 3,
         "title": "Guess the Song 3",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 3",
         "hint": "Hint for song 3"
@@ -293,10 +293,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 4,
         "title": "Guess the Song 4",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 4",
         "hint": "Hint for song 4"
@@ -306,10 +306,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 5,
         "title": "Guess the Song 5",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 5",
         "hint": "Hint for song 5"
@@ -319,10 +319,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 6,
         "title": "Guess the Song 6",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 6",
         "hint": "Hint for song 6"
@@ -332,10 +332,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 7,
         "title": "Guess the Song 7",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 7",
         "hint": "Hint for song 7"
@@ -345,10 +345,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 8,
         "title": "Guess the Song 8",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 8",
         "hint": "Hint for song 8"
@@ -358,10 +358,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 9,
         "title": "Guess the Song 9",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 9",
         "hint": "Hint for song 9"
@@ -371,10 +371,10 @@ export const DEFAULT_QUESTIONS: QuestionsData = {
         "questionNumber": 10,
         "title": "Guess the Song 10",
         "images": [
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80"
+            "",
+            "",
+            "",
+            ""
         ],
         "correctAnswer": "Famous Song 10",
         "hint": "Hint for song 10"
