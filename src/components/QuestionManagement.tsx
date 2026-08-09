@@ -95,10 +95,10 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
 
     if (activeTab === 1 || activeTab === 3) {
       setRConnTitle(activeTab === 1 ? 'Guess the Place' : 'Guess the Song');
-      setRConnImg1('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80');
-      setRConnImg2('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80');
-      setRConnImg3('https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80');
-      setRConnImg4('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80');
+      setRConnImg1('');
+      setRConnImg2('');
+      setRConnImg3('');
+      setRConnImg4('');
       setRConnAnswer('');
       setRConnHint('');
     } else if (activeTab === 2) {
