@@ -163,7 +163,7 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
         id: isAddingNew ? `r${activeTab}_q_${Date.now()}` : (editingItem as ConnectionsQuestion).id,
         questionNumber: isAddingNew ? currentList.length + 1 : (editingItem as ConnectionsQuestion).questionNumber,
         title: rConnTitle,
-        images: [rConnImg1, rConnImg2, rConnImg3, rConnImg4],
+        images: [rConnImg1, rConnImg2, rConnImg3, rConnImg4].filter(Boolean),
         correctAnswer: rConnAnswer,
         hint: rConnHint,
       };
@@ -222,14 +222,28 @@ export default function QuestionManagement({ questions, onRefreshQuestions }: Pr
                 Correct Answer: {q.correctAnswer}
               </div>
               <div className="flex items-center gap-2 mt-3">
-                {q.images.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt="Clue thumbnail"
-                    className="w-12 h-12 rounded-lg object-cover border border-slate-700 bg-slate-950"
-                  />
-                ))}
+                {/* Render only the images that have URLs */}
+                {(() => {
+                  const imgs = q.images.filter(Boolean);
+                  return (
+                    <div
+                      className="flex gap-2"
+                      style={{
+                        // Distribute space equally based on number of images
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      {imgs.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt="Clue thumbnail"
+                          className={`object-cover rounded-lg border border-slate-700 bg-slate-950 ${imgs.length === 1 ? 'w-32 h-32' : 'w-12 h-12'}`}
+                        />
+                      ))}
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </div>
