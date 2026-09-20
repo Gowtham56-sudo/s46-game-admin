@@ -1,14 +1,14 @@
 export const getApiBase = (): string => {
   if (typeof window !== 'undefined') {
     const custom = localStorage.getItem('s46_api_base');
-    if (custom && custom.trim()) {
+    if (custom && custom.trim() && !custom.includes('duckdns.org')) {
       return custom.trim().replace(/\/+$/, '');
     }
   }
   return (
     import.meta.env.VITE_API_BASE ||
     import.meta.env.VITE_API_URL ||
-    'https://s46-games.duckdns.org'
+    'https://s46-games-event.onrender.com'
   ).replace(/\/+$/, '');
 };
 
