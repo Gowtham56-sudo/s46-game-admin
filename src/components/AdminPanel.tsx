@@ -7,7 +7,7 @@ import ParticipantsPanel from './ParticipantsPanel';
 import type { GameState, QuestionsData, EventSettings } from '../types';
 import { DEFAULT_QUESTIONS, DEFAULT_SETTINGS } from '../data/defaultQuestions';
 import { LayoutDashboard, FileQuestion, Settings, LogOut, Tv, Users } from 'lucide-react';
-import { API_BASE } from '../config';
+import { API_BASE, setApiBase } from '../config';
 
 export default function AdminPanel() {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('nextgen_admin_token'));
@@ -124,6 +124,20 @@ export default function AdminPanel() {
       <header className="bg-slate-900 border-b border-slate-800 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-slate-400 font-mono text-[11px] max-w-[150px] truncate" title={API_BASE}>{API_BASE}</span>
+              <button
+                type="button"
+                onClick={() => {
+                  const newUrl = prompt('Enter live backend URL (e.g. https://<app>.onrender.com):', API_BASE);
+                  if (newUrl && newUrl.trim()) setApiBase(newUrl.trim());
+                }}
+                className="text-blue-400 hover:text-blue-300 font-bold ml-1 text-[10px] uppercase cursor-pointer"
+              >
+                Change
+              </button>
+            </div>
             <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/50 flex items-center justify-center p-1">
               <img src="/logos/nav-logo.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
@@ -187,7 +201,7 @@ export default function AdminPanel() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <a
-              href="/play"
+              href={`${API_BASE}/`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs flex items-center gap-1.5 border border-slate-700 transition-all"

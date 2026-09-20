@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Lock, Mail, Shield, Sparkles, ArrowRight } from 'lucide-react';
-import { API_BASE } from '../config';
+import { Lock, Mail, Shield, Sparkles, ArrowRight, Server, Check, RotateCcw } from 'lucide-react';
+import { API_BASE, setApiBase, resetApiBase } from '../config';
 
 interface Props {
   onLoginSuccess: (token: string) => void;
@@ -12,6 +12,8 @@ export default function AdminLogin({ onLoginSuccess }: Props) {
   const [password, setPassword] = useState('admin123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [serverUrl, setServerUrl] = useState(API_BASE);
+  const [showServerConfig, setShowServerConfig] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -32,7 +34,8 @@ export default function AdminLogin({ onLoginSuccess }: Props) {
         setError(data.message || 'Invalid login credentials');
       }
     } catch (err) {
-      setError('Connection error. Please check server.');
+      setError(`Cannot connect to backend (${API_BASE}). If you deployed to Render, update your Backend URL below.`);
+      setShowServerConfig(true);
     } finally {
       setLoading(false);
     }
@@ -44,13 +47,19 @@ export default function AdminLogin({ onLoginSuccess }: Props) {
     onLoginSuccess('nextgen_admin_valid_token_2026');
   };
 
+  const handleSaveServerUrl = () => {
+    if (serverUrl && serverUrl.trim()) {
+      setApiBase(serverUrl.trim());
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-6 relative">
       {/* Background decoration */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative z-10">
-        <div className="flex flex-col items-center text-center mb-8">
+        <div className="flex flex-col items-center text-center mb-6">
           <div className="w-16 h-16 bg-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center text-blue-400 mb-4 shadow-inner">
             <Shield className="w-8 h-8" />
           </div>
@@ -60,6 +69,60 @@ export default function AdminLogin({ onLoginSuccess }: Props) {
           <p className="text-slate-400 text-sm mt-1">
             Host & Organizer Event Management
           </p>
+        </div>
+
+        {/* Server Connection Badge */}
+        <div className="mb-6 p-3 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col gap-2">
+          <div className="flex items-center justify-between text-xs">
+            <span className="flex items-center gap-1.5 text-slate-400 font-semibold">
+              <Server className="w-3.5 h-3.5 text-blue-400" />
+              <span>Backend Server:</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => setShowServerConfig(!showServerConfig)}
+              className="text-blue-400 hover:text-blue-300 font-bold underline cursor-pointer"
+            >
+              {showServerConfig ? 'Close' : 'Change URL'}
+            </button>
+          </div>
+          <div className="text-xs font-mono text-slate-300 truncate" title={API_BASE}>
+            {API_BASE}
+          </div>
+
+          {showServerConfig && (
+            <div className="mt-2 pt-2 border-t border-slate-800 flex flex-col gap-2">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                Enter Live Render Backend URL:
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="url"
+                  value={serverUrl}
+                  onChange={(e) => setServerUrl(e.target.value)}
+                  placeholder="https://s46-game-event.onrender.com"
+                  className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 font-mono"
+                />
+                <button
+                  type="button"
+                  onClick={handleSaveServerUrl}
+                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 cursor-pointer"
+                  title="Save & Reload"
+                >
+                  <Check className="w-3.5 h-3.5" />
+                  <span>Save</span>
+                </button>
+              </div>
+              <button
+                type="button"
+                onClick={resetApiBase}
+                className="text-[11px] text-slate-500 hover:text-slate-400 flex items-center gap-1 self-start cursor-pointer"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Reset to default URL</span>
+              </button>
+            </div>
+          )}
         </div>
 
         {error && (
