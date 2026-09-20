@@ -33,7 +33,7 @@ export interface ConnectionsQuestion {
   id: string;
   questionNumber: number;
   title: string;
-  images: [string, string, string, string]; // 4 image URLs
+  images: string[]; // 4 image URLs
   correctAnswer: string;
   hint?: string;
 }
